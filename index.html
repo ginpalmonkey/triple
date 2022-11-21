@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <style>
+        /* header container */
+        .header-container {
+            width: 100%;
+            height: 80px;
+            background-color: antiquewhite;
+            position: relative;
+            display: none;
+        }
+        .header-container>h1 {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+        }
+        .header-container>a {
+            position: absolute;
+            right: 60px;
+            top: 30px;
+        }
+
+        /* baseheader */
+        .base-header {
+            width: 100%;
+            height: 80px;
+            background-color: rgba(45, 206, 210, 1);
+            position: relative;
+            color: white;
+        }
+        .base-header>h1 {
+            position: absolute;
+            left: 60px;
+            top: 20px;
+        }
+        .base-header>a {
+            position: absolute;
+            right: 60px;
+            top: 30px;
+        }
+
+
+        
+    </style> <!-- header style-->
+    <style>
+        article {
+            width: 100%;
+            height: 1000px;
+        }
+        .content01 {
+            width: 100%;
+            height: 860px;
+            background-image: url(./img/img-01-bg.png);
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            justify-content: center;
+            overflow: hidden;
+            
+        }
+        .content02 {
+            width: 100%; height: 552px;
+            position: relative;
+        }
+        .content03 {
+            background-color: rgb(250, 250, 250);
+        }
+        .content04{
+            background-color: #f5f5f5;
+        }
+        .content06 {
+            background-color: #f5f5f5;
+        }
+        .inner{
+            width: 1040px; height: 100%;
+            margin: 0 auto;
+        }
+
+        /* content1 */
+        .content01>.inner {
+            color: white;
+            position: relative;
+        }
+        .inner-content {
+            position: absolute;
+            left: 0; top: 220px;
+        }
+        .inner-content>h1 {
+            margin: auto;
+            font-size: 90px;
+            letter-spacing: -3px;
+        }
+        .btn-download {
+            text-align: center;
+            line-height: 3;
+            width: 188px; height: 50px;
+            border: 1px solid white;
+            border-radius: 44px;
+            position: absolute;
+            left: 0; bottom: 240px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-download:hover {
+            background-color: white;
+            color: black;
+            transition: 1s;
+        }
+        .phone-image {
+            background-image: url(./img/img_01_screen_3_520@3x.png);
+            background-size: cover;
+            width: 290px; height: 598px;
+            border-radius: 42px;
+            position: absolute;
+            right: 0; top: 220px
+        }
+        /* content2 */
+        .content02>.inner {
+            color: black;
+            display: flex;
+        }
+        .inner-left {
+            width:50%; height: 100%;
+            position: relative;
+        }
+        .inner:nth-child(2) {
+            display: flex;
+        }
+        .app-image {
+            width: 400px; height: 338px;
+            background-image: url(./img/img-02-triple@3x.png);
+            background-size: cover;
+            overflow: hidden;
+            text-align: center;
+            position: absolute;
+            top:147px;
+        }
+        .inner-left>p {
+            position: absolute;
+            color: rgb(61, 61, 61);
+            bottom: 110px;
+            left: 25%;
+        }
+        .inner-right {
+            width: 50%; height: 100%;
+            position:relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner-right>span {
+            display: block;
+            padding-top: 130px;
+            font-size: 36px;
+            line-height: 60px;
+        }
+        .badge-container {
+            margin: 60px 0 0 190px;
+            width: 100%; height: 50%;
+            display: flex; 
+            justify-content: right
+        }
+        .badge-container>div{
+            width: 50%; height: 54px;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px 0px 5px 62px;
+            line-height: 1.5;
+            background-repeat: no-repeat;
+            background-image: url(./img/img-02-badge-google@3x.png);
+            background-position: left top;
+            background-size: 52px 54px;
+
+        }
+        .badge-container>div:nth-child(2) {
+            background-image: url(./img/img-02-badge-apple@4x.png);
+        }
+        /* content3 */
+        .content03>.inner{
+            position: relative;
+            overflow: hidden;
+        }
+        .content03>div h2{
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 150px;
+            text-align: center;
+            font-size: 52px;
+            font-weight: 500;
+        }
+        .content03>div p{
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 306px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 30px;
+        }
+        .reserve-img {
+            width: 100%; height: 606px;
+            position: absolute;
+            bottom: -52px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+        }
+        .reserve-img> div {
+            width: 290px; height: 598px;
+            border-radius: 42px;
+            background-size: cover;
+            background-position: center center;
+            box-shadow: rgb(0 0 0 / 18%) 0px 9px 17px 0px, rgb(0 0 0 / 8%) 0px -4px 6px 0px inset;
+        }
+        .reserve-img>div:nth-child(1) {
+            background-image: url(./img/img-07-screen-3@3x.png);
+            
+        }
+        .reserve-img>div:nth-child(2) {
+            background-image: url(./img/img_07_screen_1@3x.png);
+        }
+        .reserve-img>div:nth-child(3) {
+            background-image: url(./img/img_07_screen_2@3x.png);
+        }
+
+        /* content4 */
+        .content04>.inner {
+            position: relative;
+        }
+        .guide-left{
+            width: 335px; height: auto;
+            position: absolute;
+            top: 240px;
+        }
+        .guide-left h2{
+            font-weight: 400;
+            font-size: 52px;
+        }
+        .guide-left p {
+            font-size: 17px;
+            line-height: 1.76;
+            margin-top: 20px;
+        }
+        .guide-right{
+            position:absolute;
+            width: auto;
+            height: auto;
+            top: 0; right: 0;
+        }
+        .guide-right img:nth-child(1) { width: 140px; height: 140px;
+            position: absolute; top: 182px; right: 315px;
+        }
+        .guide-right img:nth-child(2) { width: 200px; height: 200px;
+            position: absolute; top: 151px; right: 51px;
+        }
+        .guide-right img:nth-child(3) { width: 150px; height: 150px;
+            position: absolute; top: 173px; right: -142px;
+        }
+        .guide-right img:nth-child(4) { width: 160px; height: 160px;
+            position: absolute; top: 343px; right: 438px;
+        }
+        .guide-right img:nth-child(5) { width: 200px; height: 200px;
+            position: absolute; top: 346px; right: 204px;
+        }
+        .guide-right img:nth-child(6) { width: 220px; height: 220px;
+            position: absolute; top: 368px; right: -67px;
+        }
+        .guide-right img:nth-child(7) { width: 200px; height: 200px;
+            position: absolute; top: 323px; right: -300px;
+        }
+        .guide-right img:nth-child(8) { width: 130px; height: 130px;
+            position: absolute; top: 523px; right: 554px;
+        }
+        .guide-right img:nth-child(9) { width: 170px; height: 170px;
+            position: absolute; top: 561px; right: 339px;
+        }
+        .guide-right img:nth-child(10) { width: 200px; height: 200px;
+            position: absolute; top: 557px; right: 90px;
+        }
+        .guide-right img:nth-child(11) { width: 120px; height: 120px;
+            position: absolute; top: 717px; right: -42px;
+        }
+        .guide-right img:nth-child(12) { width: 170px; height: 170px;
+            position: absolute; top: 568px; right: -200px;
+        }
+
+        /* content05 */
+        .content05>.inner{
+            position: relative;
+            overflow: hidden;
+        }
+        .content05>div h2{
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 150px;
+            text-align: center;
+            font-size: 52px;
+            font-weight: 500;
+        }
+        .content05>div p{
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 306px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 30px;
+        }
+        
+        .plan-img {
+            width: 100%; height: 606px;
+            position: absolute;
+            bottom: -52px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+        }
+        .plan-img> div {
+            width: 221px; height: 456px;
+            border-radius: 42px;
+            background-size: cover;
+            background-position: center center;
+            box-shadow: rgb(0 0 0 / 18%) 0px 9px 17px 0px, rgb(0 0 0 / 8%) 0px -4px 6px 0px inset;
+        }
+        .plan-img>div:nth-child(1) {
+            background-image: url(./img/img-04-screen-1@3x.png);
+            
+        }
+        .plan-img>div:nth-child(2) {
+            background-image: url(./img/img-04-screen-2@3x.png);
+        }
+        .plan-img>div:nth-child(3) {
+            background-image: url(./img/img-04-screen-3@3x.png);
+        }
+
+        /* content06 */
+        .content06>.inner {
+            position: relative;
+        }
+        .navi-left{
+            width: auto; height: auto;
+            position: absolute;
+            top: 240px;
+        }
+        .navi-left h2{
+            font-weight: 400;
+            font-size: 52px;
+        }
+        .navi-left p {
+            font-size: 17px;
+            line-height: 1.76;
+            margin-top: 20px;
+        }
+        .navi-img {
+            float: right;
+            position: relative;
+        }
+        .navi-img>div {
+            width: 290px;
+            height: 598px;
+            border-radius: 42px;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 18%) 0px 9px 17px 0px, rgb(0 0 0 / 8%) 0px -4px 6px 0px inset;
+        }
+        .navi-img>div:nth-child(1) {
+            position: absolute;
+            top: 130px; right: 0;
+            z-index: 1;
+        }
+        .navi-img>div:nth-child(1) img{
+            width: 290px;
+            height: 598px;
+        }
+        .navi-img>div:nth-child(2) {
+            position: absolute;
+            top: 65px; right: 200px;
+            
+        }
+        .navi-img>div:nth-child(2) img{
+            width: 290px;
+            height: 598px;
+        }
+
+        @media screen and (max-width: 1140px){
+            .contents {
+                width: 100%;
+                height: auto;
+            }
+            .inner {
+                width: 360px;
+                height: 600px;
+                margin: 0 auto;
+            }
+            .inner-content {
+                top: 0px;
+            }
+            .inner-content>h1{
+                text-align: center;
+                font-size: 48px;
+            }
+            .inner-content>p{
+                font-size: 15px;
+                text-align: center;
+            }
+            .btn-download {
+                display: none;
+            }
+            .phone-image {
+                scale: 0.8;
+                top: 120px;
+                left : 30px;
+            }
+        }
+    </style> <!-- section style-->
+    <style>
+        footer {
+            height: 10px;
+            border-top: 1px solid black;
+        }
+        .footer-container {
+            background-color: lightblue;
+            width: 780px;
+            margin: 0 auto;
+            padding: 30px 30px 40px;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-top>div:nth-child(1){
+            font-size: 12px;
+            font-weight: 700;
+            color: gray;
+        }
+        .footer-top>div:nth-child(2) a{
+            font-size: 12px;
+            color: gray;
+            border: 1px solid gray;
+            border-radius: 4px;
+            padding: 9px 12px;
+            font-weight: 600;
+            
+        }
+        .footer-mid {
+            font-size: 11px;
+            color: gray;
+            margin-top: 25px; margin-bottom: 25px;
+        }
+        .footer-bot {
+            font-size: 11px;
+            font-weight: bold;
+            color: #3a3a3a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>
+                <a href="./index.html">
+                    <img src="./img/logo" alt="">
+                </a>logo
+            </h1>
+
+            <a href="#">내 예약</a>
+        </div>
+        <div class="base-header">
+            <h1>
+                <a href="./index.html">
+                    <img src="./img/logo" alt="">
+                </a>logo
+            </h1>
+
+            <a href="#">내 예약</a>
+        </div>
+    </header>
+    <section>
+        <article class="contents content01">
+            <div class="inner">
+                
+                <div class="inner-content">
+                    <h1>
+                        여행의 모든 것 <br>
+                        트리플로 한 번에
+                    </h1>
+                    <p>예약부터 일정까지 앱 하나로 간편하게 준비하세요.</p>
+                    
+                </div>
+                <div class="btn-download">
+                    <a href="#">앱 설치하기</a>
+                </div>
+                <div class="phone-image"></div>
+            </div>
+            
+        </article>
+        <article class="contents content02">
+            <div class="inner"> 
+                
+                <div class="inner-left">
+                    <div class="app-image"></div>
+                    <p>2021년 12월 기준</p>
+                </div>
+
+                <div class="inner-right">
+                    <span>
+                        <strong>700만명</strong>의 여행자 <br>
+                        <strong>100만개</strong>의 여행리뷰 <br>
+                        <strong>470만개</strong>의 여행일정
+                    </span>
+                    <div class="badge-container">
+                        <div class="playstore">
+                            2018 구글 플레이스토어 <br>
+                            올해의 앱 최우수상 수상
+                        </div>
+                        <div class="appstore">
+                            2018 애플 앱스토어 <br>
+                            오늘의 여행앱 선정
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+        <article class="contents content03">
+            <div class="inner">
+                <div>
+                    <h2>
+                        모든 예약을 <br>
+                        최저가로 한 번에!
+                    </h2>
+                </div>
+                <div>
+                    <p>
+                        항공권부터 숙소, 투어·티켓까지 최저가로 예약. <br>
+                        트리플 전용 특가는 보너스.
+                    </p>
+                </div>
+                <div class="reserve-img">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </article>
+        <article class="contents content04">
+            <div class="inner">
+                <div class="guide-left">
+                    
+                    <h2>
+                        국내도 해외도 <br>
+                        무료 가이드
+                    </h2>
+                                        
+                    <p>
+                        흩어져 있는 여행 정보를 한눈에. <br>
+                        깔끔하고 자세한 도시별 가이드로 <br>
+                        검색 지옥에서 해방될 시간.
+                    </p>
+                </div>
+                <div class="guide-right">
+                    <img src="./img/img-03-vladivostok@3x.png" alt="">
+                    <img src="./img/img-03-rome@3x.png" alt="">
+                    <img src="./img/img-03-sydney@3x.png" alt="">
+                    <img src="./img/img-03-newyork@3x.png" alt="">
+                    <img src="./img/img-03-kaohsiung@3x.png" alt="">
+                    <img src="./img/img-03-jeju@3x.png" alt="">
+                    <img src="./img/img-03-osaka@3x.png" alt="">
+                    <img src="./img/img-03-laos@3x.png" alt="">
+                    <img src="./img/img-03-paris@3x.png" alt="">
+                    <img src="./img/img-03-london@3x.png" alt="">
+                    <img src="./img/img-03-melbourne@3x.png" alt="">
+                    <img src="./img/img-03-budapest@3x.png" alt="">
+                </div>
+            </div>
+        </article>
+        <article class="contents content05">
+            <div class="inner">
+                <div>
+                    <h2>
+                        복잡한 여행 일정 <br>
+                        이렇게나 간편하게
+                    </h2>
+                </div>
+                <div>
+                    <p>
+                        동행인과 함께 짜는 지도 동선 일정. <br>
+                        여행 가계부로 경비 정산까지 한 번에.
+                    </p>
+                </div>
+                <div class="plan-img">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </article>
+        <article class="contents content06">
+            <div class="inner">
+                <div class="navi-left">                    
+                    <h2>
+                        어디로 향하든 <br>
+                        믿을만한 길잡이
+                    </h2>
+                                        
+                    <p>
+                        여행 중 내 위치에 꼭 맞게 <br>
+                        맛집, 관광지를 쉼 없이 알려주니까. <br>
+                        마음 편히 여행에 몰입하는 경험 시작.
+                    </p>
+                </div>
+                <div class="navi-img">
+                    <div>
+                        <img src="./img/img-05-screen@2x.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/img-05-screen-01@3x.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div>트리플 사업자 정보</div>
+                <div>
+                    <a href="#">로그인</a>
+                    <a href="#">트리플 앱</a>
+                </div>
+            </div>
+            <div class="footer-mid">
+                주식회사 인터파크는 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.
+            </div>
+            <div class="footer-bot">
+                <a href="#">서비스 이용약관</a> |
+                <a href="#">개인정보 처리방침</a> |
+                <a href="#">회사소개</a> |
+                <a href="#">고객센터</a> |
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
